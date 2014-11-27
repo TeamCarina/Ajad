@@ -1,0 +1,110 @@
+/*--------------------------------------------------------------------------/
+* @Author		KulerThemes.com http://www.kulerthemes.com
+* @Copyright	Copyright (C) 2012 - 2013 KulerThemes.com. All rights reserved.
+* @License		KulerThemes.com Proprietary License
+/---------------------------------------------------------------------------*/
+
+.primary-define .kuler-accordion .item-title {
+	color: #fff;
+	cursor: pointer;
+	font-size: 16px;
+	font-weight: 600;
+	border-top: 1px solid #fff;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+.primary-define .kuler-accordion .item-title span {
+	margin-top: 1px;
+	display: inline-block;
+	line-height: 48px;
+	padding-left: 15px;
+	padding-right: 15px;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+}
+.primary-define .kuler-accordion .item-title.selected {
+	color: #999;
+	background-color: #ddd;
+}
+.primary-define .kuler-accordion .item-content {
+	margin-top: 1px;
+	background-color: #fff;
+	border: 1px solid #eee;
+}
+.primary-define .kuler-accordion .box-product {
+	padding: 20px;
+	background-color: #fff;
+}
+.primary-define .kuler-accordion .box-product > div {
+	margin: 0;
+	padding: 0;
+	border: none;
+	box-shadow: none;
+}
+/* HORIZONTAL */
+.primary-define .kuler-accordion .horizontal {
+	border: 0;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	position: relative;
+	box-sizing: content-box;
+	-webkit-perspective: 1000;
+	-webkit-backface-visibility: hidden;
+	-webkit-tap-highlight-color: transparent;
+}
+.primary-define .kuler-accordion .horizontal .item-title,
+.primary-define .kuler-accordion .horizontal .item-content {
+	z-index: 1;
+	overflow: hidden;
+	position: absolute;
+}
+.primary-define .kuler-accordion .horizontal .item-title {
+	top: 0;
+	left: 0;
+	z-index: 2;
+	text-align: right;
+	transform: translateX(-100%) rotate(-90deg);
+	-moz-transform: translateX(-100%) rotate(-90deg);
+	-webkit-transform: translateX(-100%) rotate(-90deg);
+	transform-origin: right top;
+	-moz-transform-origin: right top;
+	-webkit-transform-origin: right top;
+	-webkit-backface-visibility: hidden; /* fixes chrome bug */
+}
+.primary-define .kuler-accordion .horizontal .item-content {
+	top: -1px;
+	margin: 0;
+	border-top: none;
+	border-left: none;
+}
+.primary-define .kuler-accordion .horizontal .box-product {
+	margin-top: 1px;
+	border-top: 1px solid #eee;
+}
+/* IE */
+.primary-define .kuler-accordion .horizontal.box-content.ie .item-title,
+.primary-define .kuler-accordion .horizontal.box-content.ie .item-title span {
+	filter: none;
+	-ms-filter: none;
+	-ms-transform: none
+}
+.primary-define .kuler-accordion .horizontal.box-content.ie7 .item-title {
+	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3)
+}
+.primary-define .kuler-accordion .horizontal.box-content.ie8 .item-title {
+	-ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=3)"
+}
+.primary-define .kuler-accordion .horizontal.box-content.ie9 .item-title {
+	-ms-transform: translateX(-100%) rotate(-90deg);
+	-ms-transform-origin: right top
+}
+/* VERTICAL */
+.primary-define .kuler-accordion .vertical .item-content {
+	overflow: hidden;
+}

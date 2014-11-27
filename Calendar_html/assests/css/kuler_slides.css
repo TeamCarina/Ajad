@@ -1,0 +1,11 @@
+
+/* Slides */
+.kuler-slides .box {
+	overflow: hidden;
+}
+.kuler-slides .jcarousel-list {
+	overflow: visible !important;
+}
+.kuler-slides .jcarousel-item {
+	margin: 0;
+}

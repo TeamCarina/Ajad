@@ -1,0 +1,67 @@
+.primary-define .kuler-advanced-html .box .box {
+	margin-bottom: 0;
+}
+.kuler-widget {
+    position: fixed;
+}
+.kuler-widget .kuler-advanced-html {
+	height: 50px;
+	position: relative;
+	margin-bottom: 10px;
+	transition: 0.3s ease-out 0.2s;
+	-moz-transition: 0.3s ease-out 0.2s;
+	-webkit-transition: 0.3s ease-out 0.2s;
+}
+.kuler-widget .widget-icon {
+	top: 0;
+	z-index: 1;
+	width: 50px;
+	height: 50px;
+	display: block;
+	cursor: pointer;
+	position: absolute;
+	background: #6EC8BC url(../image/icons/icon-chat.png) center center no-repeat;
+}
+.kuler-widget .box {
+	margin: 0;
+}
+.kuler-widget .box-content {
+	padding: 15px;
+    background-color: #fff;
+	border: 1px solid #ddd;
+	transition: 0.3s ease-out 0.2s;
+	-moz-transition: 0.3s ease-out 0.2s;
+	-webkit-transition: 0.3s ease-out 0.2s;
+}
+/* Left-side */
+.kuler-widget.left {
+    left: 0;
+    top: 50%;
+}
+.kuler-widget.left .kuler-advanced-html {
+	left: -100%;
+}
+.kuler-widget.left .widget-icon {
+	right: -50px;
+}
+/* Right-side */
+.kuler-widget.right {
+    right: 0;
+    top: 50%;
+}
+.kuler-widget.right .kuler-advanced-html {
+	right: -100%;
+}
+.kuler-widget.right .widget-icon {
+	left: -50px;
+}
+/* hover state */
+.kuler-widget .kuler-advanced-html:hover {
+	z-index: 5;
+}
+.kuler-widget.left .kuler-advanced-html:hover {
+	left: 0;
+}
+.kuler-widget.right .kuler-advanced-html:hover {
+	right: 0;
+}

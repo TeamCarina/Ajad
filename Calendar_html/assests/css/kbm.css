@@ -1,0 +1,99 @@
+/********************************* HOME *********************************/
+.blog-feed {
+	text-align: right;
+}
+/********************************* ARTICLE *********************************/
+.article .article-image {
+	display: block;
+	float: left;
+	margin-right: 10px;
+}
+.article .article-read-more {
+	clear: both;
+	text-align: right;
+}
+.article .article-read-more a {
+	margin-right: 10px;
+}
+.article .last-update {
+	text-align: right;
+	color: #cccccc;
+}
+/* RELATED ARTICLE */
+.related-articles ul {
+	width: 200px;
+	float: left;
+}
+.related-articles {
+	overflow: hidden;
+}
+/* RELATED PRODUCTS */
+.related-products {
+	margin-bottom: 20px;
+}
+/* COMMENT */
+.comment-container {
+	padding: 15px;
+	background: #f6f6f6;
+}
+.comment-list {
+	list-style: none;
+}
+.comment-list .comment {
+	padding: 10px;
+}
+.comment.even {
+	background: #fff;
+}
+.comment.odd {
+	background: #eee;
+}
+.comment .avatar {
+	float: left;
+}
+.comment .author,
+.comment .date,
+.comment p {
+	margin-left: 70px;
+}
+.comment .reply {
+	clear: both;
+	text-align: right;
+}
+.comment .author-badge-color {
+	color: #fff;
+	padding: 2px;
+}
+/* COMMENT FORM */
+#comment-form #reply-cancel {
+	float: right;
+	margin-top: -30px;
+}
+.comment #comment-form {
+	background: #fff;
+	padding: 15px;
+}
+#comment-form .blog-field-error {
+	color: red;
+}
+/* ===================================== MODULES ===================================== */
+.box ul {
+	list-style: none;
+}
+.box .comments li,
+.box .articles li {
+	overflow: hidden;
+}
+.box .comments li .avatar,
+.box .articles li .avatar {
+	float: left;
+	margin-right: 10px;
+}
+/* LATEST COMMENT */
+.box .comments li .content {
+	display: block;
+}
+/* POPULAR ARTICLE */
+.box .articles li .date {
+	display: block;
+}
