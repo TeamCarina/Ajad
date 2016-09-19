@@ -1,0 +1,61 @@
+﻿@using SampleApp.Models
+@model LoginViewModel
+@{
+    ViewBag.Title = "Log in";
+}
+
+<div class="welcome-user">
+    <div class="container">
+        <div class="col-md-3">
+        </div>
+        <div class="col-md-6">
+            <h1>@ViewBag.Title</h1>
+            <div class="line">
+                <hr>
+                <div class="divider"></div>
+            </div>
+            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "login", role = "form" }))
+            {
+                @*@Html.AntiForgeryToken()*@
+
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="form-group">
+                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @placeholder = "Email", @required = "required" })
+                            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="form-group">
+                            @Html.PasswordFor(m => m.Password, new { @class = "form-control", @placeholder = "Password", @required = "required" })
+                            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="orange-btn">Login</button>
+                <br>
+                <div class="options">
+                    <div class="remember pull-left">
+                        <input type="checkbox" class="checkbox-inline" /> Remember me
+                    </div>
+                    <a href="#" class="pull-right">Forgot password?</a>
+                    @Html.ActionLink("Register as a new user", "Register")
+                </div>
+                <div class="social-login">
+                    @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
+                    @*<button type="submit" class="fb-btn"> <i class="fa fa-facebook" aria-hidden="true"></i> using Facebook</button>
+                        <button type="submit" class="google-btn pull-right"> <i class="fa fa-google-plus" aria-hidden="true"></i> using Google</button>*@
+                </div>
+            }
+
+        </div>
+        <div class="col-md-3">
+        </div>
+    </div>
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,104 @@
+﻿@model SampleApp.Models.AddCampiagnViewModel
+@{
+    ViewBag.Title = "Add Campiagn";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+    <div class="page-title">
+      <div class="title_left">
+        <h3>Campaign</h3>
+      </div>
+      <h5 class="sub-title">Add New Campaign</h5>
+    </div>
+    <div class="content">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="row">
+          <div class="x_panel">
+            <div class="row">
+              <div class="col-md-12 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_content">
+                      
+                    <br />
+                    <div class="section-title">
+                      <h4>Campaign Details</h4>
+                    </div>
+                    <div class="bg-whte">
+                      @using (Html.BeginForm("AddCampiagns", "Admin", FormMethod.Post, new { @class = "form-horizontal form-label-left input_mask", id = "input-design" }))
+                                    {
+                                        @Html.AntiForgeryToken()
+
+
+                        <div class="col-md-6">
+                          <div class="input-group input-group-icon col-md-10">
+                            <div class="input-icon"><i class="fa fa-pencil" aria-hidden="true"></i> Title</div>
+                          @*  <input type="text" placeholder="Campaign Title" name="Campaign-title" required/>*@
+                                @Html.TextBoxFor(m => m.Title)
+                                @Html.ValidationMessageFor(m => m.Title, "", new { @class = "text-danger" })
+                          </div>
+                          
+                          <div class="input-group input-group-icon col-md-10">
+                            <div class="input-icon"><i class="fa fa-link" aria-hidden="true"></i> URL</div>
+                           @* <input type="url" placeholder="Enter URL with http:// or https://" name="Campaign-url" required/>*@
+                                  @Html.TextBoxFor(m => m.URL)
+                                  @Html.ValidationMessageFor(m => m.URL, "", new { @class = "text-danger" })
+
+                          </div>
+                          <br>
+                          <span style="color:red;"> @TempData["msg"]</span>  
+                          <div class="button-div col-md-10 col-sm-12 col-xs-12">
+                            <div class="row"> <!-- Button trigger modal -->
+                              <button type="submit" class="btn-darkblue btn-send-dash" > Save Details</button>
+                            </div>
+                          </div>
+                        </div>
+                        
+                       
+                          
+                      }
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br />
+      <br />
+      <br />
+    </div>
+<!-- Modal -->
+  <div class="modal fade modalbox success" id="myModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="icon"> <i class="fa fa-check" aria-hidden="true"></i> </div>
+          <h4 class="text-center">Your Campaign has been created successfully.</h4>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-light-blue pull-left" onClick="location.href='add-notification.html'">Send Push Notification <i class="fa fa-paper-plane" aria-hidden="true"></i> </button>
+          <button type="button" class="btn btn-primary" onClick="location.href='get-code.html'">Get Code</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<script type="text/javascript">
+            $(document).ready(function() {
+             $("#switch-on").click(function() {
+				 $(".switch").addClass("glow").removeClass("white");
+				 $(".hide-div").addClass("show-div").removeClass("hide-div");
+			 });
+			 $("#switch-off").click(function() {
+				 $(".switch").addClass("white").removeClass("glow");
+				 $(".show-div").addClass("hide-div").removeClass("show-div");
+			 });
+            });
+          </script> 
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

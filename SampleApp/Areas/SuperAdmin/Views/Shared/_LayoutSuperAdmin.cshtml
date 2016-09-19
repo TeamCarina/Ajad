@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Push Notification</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/assets/css/vendor/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/fonts/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- fontawesome cdn CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Style CSS -->
+    <link href="/assets/css/style.css" rel="stylesheet" type="text/css" />
+
+    <!-- plugin CSS -->
+    <link href="/assets/css/plugin.css" rel="stylesheet" type="text/css" />
+
+    <!--jquery-min-->
+    <script src="/assets/js/vendor/jquery.min.js" type="text/javascript"></script>
+
+    <!--Bootstrap-->
+    <script src="/assets/js/vendor/bootstrap.min.js" type="text/javascript"></script>
+
+    <!--[if lt IE 9]>
+            <script src="../assets/js/ie8-responsive-file-warning.js"></script>
+            <![endif]-->
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+              <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+              <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+            <![endif]-->
+    <!--Plugin-->
+    <script src="/assets/js/plugin.js" type="text/javascript"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="container">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        @Html.ActionLink("Company LOGO", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse main-nav" id="bs-example-navbar-collapse-1">
+
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                            <li>@Html.ActionLink("Pricing", "Pricing", "Home")</li>
+                            <li>@Html.ActionLink("API", "API", "Home")</li>
+                            <li>@Html.ActionLink("FAQ", "FAQ", "Home")</li>
+                            <li>@Html.ActionLink("Contact us", "ContactUs", "Home")</li>
+                            @Html.Partial("_LoginPartial")
+                            <!--<li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                              <ul class="dropdown-menu">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">Separated link</a></li>
+                              </ul>
+                            </li>-->
+                        </ul>
+                    </div><!-- /.navbar-collapse -->
+                </div>
+            </div><!-- /.container-fluid -->
+        </nav>
+    </header>
+    <div class="content">
+        @RenderBody()
+    </div>
+    <footer>
+        <div class="container">
+
+            <div class="col-md-3 col-sm-4">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">About us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of service</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-3 col-sm-4">
+                <h4>Product</h4>
+                <ul>
+                    <li><a href="#">API</a></li>
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#">Get Started</a></li>
+                    <li><a href="#">Try Online Demo</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-3 col-sm-4">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="#">Chrome Notification</a></li>
+                    <li><a href="#">Safari Notification</a></li>
+                    <li><a href="#">Mozilla Notification</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-3 col-sm-12">
+                <h4>Company logo</h4>
+                <ul id="social-icon">
+                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+
+        </div>
+    </footer>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

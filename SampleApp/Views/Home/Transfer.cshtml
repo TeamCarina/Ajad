@@ -1,0 +1,138 @@
+﻿@model SampleApp.Model.Models.TransferModel
+@{
+    var accountDetails = (SampleApp.Model.Models.Account)ViewBag.AccountDetails;
+    ViewBag.Title = "Transfer Money";
+    Model.SourceAccountNumber = accountDetails.AccountNumber;
+    Model.AccountId = accountDetails.AccountId;//CheckAccount
+}
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#transferCheck').click(function () {
+            if ($('#txtDestinationAccount').val() != '' && $('#txtAmount').val() != '') {
+                $.ajax({
+                    url: '/Home/CheckAccount?accountNumber=' + $('#txtDestinationAccount').val(),
+                    type: 'post',
+                    success: function (data) {
+                        $('#lblUserName').html(data.Name);
+                        $('#lblCountry').html(data.Country);
+                        $('#lblCity').html(data.City);
+                        $('#lblAccountNumber').html(data.AccountNumber);
+                        $('#userDetails').show();
+                    },
+                    error: function () {
+                        $('#accountError').html('Account Not Found...!');
+                        $('#accountError').show();
+                    }
+                }).done(function () {
+                    $('#transferCheck').show();
+                });
+            }
+            else {
+                $('#accountError').html('Please give sufficient details...!');
+                $('#accountError').show();
+            }
+        });
+
+        $('#txtDestinationAccount').change(function () {
+            $('#accountError').hide();
+        });
+        $('#transferCancel').click(function () {
+            $('#userDetails').hide();
+            $('#transferCheck').show();
+        });
+    });
+</script>
+<div class="row">
+    @using (Html.BeginForm("Transfer", "Home", FormMethod.Post, new { id = "frmTransfer", @class = "form-horizontal", role = "form" }))
+    {
+
+        <div class="col-md-12">
+            <h2>Welcome @accountDetails.AspNetUsers.FirstName @accountDetails.AspNetUsers.LastName !</h2>
+            <p>
+                <div style="height: 30px; background-color: gray;">
+                    <label style="padding-left: 20px; padding-top: 5px;">Transfer amount to another account!</label></div>
+                <div style="border: 1px solid gray; padding: 20px;">
+                    <label style="color: red; display: none;" id="accountError">Account Not Found...!</label>
+                    <table>
+                        <tr>
+                            <td>
+                                @Html.ValidationSummary("", new { @class = "text-danger" })
+                                <table>
+                                    <tr>
+                                        <td>Name : </td>
+                                        <td>@accountDetails.AspNetUsers.FirstName @accountDetails.AspNetUsers.LastName</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Account : </td>
+                                        <td>@Model.SourceAccountNumber</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Available Balance : </td>
+                                        <td>@accountDetails.CurrentBalance @ViewBag.CurrencyCode</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Destination Account Number : </td>
+                                        <td>@Html.TextBoxFor(x => x.DestinationAccountNumber, new { id = "txtDestinationAccount" })<label style="color: red; font-size: x-large;">*</label></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Amount : </td>
+                                        <td>
+                                            @Html.TextBoxFor(x => x.Amount, new { id = "txtAmount", @type = "number" })<label style="color: red; font-size: x-large;">*</label></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Remarks : </td>
+                                        <td>@Html.TextAreaFor(x => x.Remarks)</td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td>
+                                <table id="userDetails" style="display: none;">
+                                    <tr>
+                                        <td>Name : </td>
+                                        <td>
+                                            <label id="lblUserName"></label>
+                                        </td>
+                                    </tr>
+
+                              
+
+
+                                    <tr>
+                                        <td>Country : </td>
+                                        <td>
+                                            <label id="lblCountry"></label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>City : </td>
+                                        <td>
+                                            <label id="lblCity"></label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Account Number : </td>
+                                        <td>
+                                            <label id="lblAccountNumber"></label>
+                                        </td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>
+                                            <input type="submit" id="transferAmount" value="Transfer" /></td>
+                                        <td>
+                                            <input type="button" id="transferCancel" value="Cancel" /></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+
+                    @Html.HiddenFor(x => x.AccountId)
+                    @Html.HiddenFor(x => x.SourceAccountNumber)
+                </div>
+            </p>
+            <input type="button" id="transferCheck" class="btn btn-default" value="Submit" />
+        </div>
+    }
+</div>

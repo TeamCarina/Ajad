@@ -1,0 +1,53 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+
+   <script type="text/javascript">
+       // <![CDATA[
+       $(document).ready(function () {
+
+           $.ajax({
+               url: "/Home/GetAllPlayer",
+               type: "GET",
+               dataType: "json",
+
+               success: function (data) {
+                   var data1 = data.replace('/', '');
+
+                   console.log(data1);
+                   var jsonData = JSON.parse(data1);
+                   for (var i = 0; i < jsonData.players.length; i++) {
+                       var counter = jsonData.players[i];
+                       console.log(counter.id);
+                       $("#Apps").append($("<li>").text("id: " + counter.id + " identifier: " + counter.identifier));
+                   }
+
+               
+
+               },
+               error: function (xhr) {
+                   $("#msg").text("Error occured.");
+               }
+
+           });
+       });
+</script>
+</head>
+<body>
+    <div>
+      <div class="form-group">
+					<label>Select Apps :</label>
+          <ul id="Apps"></ul>
+                    
+					</div>
+    </div>
+</body>
+</html>

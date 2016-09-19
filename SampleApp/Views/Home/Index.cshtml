@@ -1,0 +1,253 @@
+﻿
+@model SampleApp.Models.RegisterViewModel
+@{
+    ViewBag.Title = "Home Page";
+}
+@*<div class="row">
+    <div class="col-md-12">
+        <h2>Welcome @Model.AspNetUsers.FirstName @Model.AspNetUsers.LastName !</h2>
+        <p>
+            <div style="height:30px; background-color:gray;"><label style="padding-left:20px; padding-top:5px;">Holdings (What you have)</label></div>
+            <div style="border:1px solid gray; padding:20px;">
+                
+                <table>
+                    <tr>
+                        <td>Name : </td>
+                        <td>@Model.AspNetUsers.FirstName @Model.AspNetUsers.LastName</td>
+                    </tr>
+                    <tr>
+                        <td>Address : </td>
+                        <td>@Model.AspNetUsers.Address</td>
+                    </tr>
+                    <tr>
+                        <td>Country : </td>
+                        <td>@Model.AspNetUsers.Country</td>
+                    </tr>
+                    <tr>
+                        <td>Account Number : </td>
+                        <td>@Model.AccountNumber</td>
+                    </tr>
+                    <tr>
+                        <td>Current Balance : </td>
+                        <td>@Model.CurrentBalance @ViewBag.CurrencyCode</td>
+                    </tr>
+                </table>
+            </div>
+        </p>
+        <p><a class="btn btn-default" href="/Home/Transections">View Transections</a></p>
+    </div>
+</div>*@
+
+<!-- hero section-->
+
+<section id="home">
+
+    <div class="container">
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <h1 class="page-title">Push Notification Creation <strong>Made Easy</strong></h1>
+            <h4 class="sub-head">Implement Chrome, Firefox & Safari push notifications on any website in <strong>5 mins</strong></h4>
+            <br />
+            <img src="assets/images/screen1.png" class="img-responsive" alt="" />
+        </div>
+        <div class="col-md-4 col-sm-5 col-xs-12 pull-right">
+            <h4 class="landing-text sub-head">With <strong>Company name</strong> you can easily create personalized push notification to your customers and monitor the results.</h4>
+            <br />
+            <a href="#" class="btn-whte">See It In Action</a>
+            <a href="#" class="btn-darkblue">Get started</a>
+        </div>
+    </div>
+</section>
+
+<!-- hero end -->
+<!-- choose -->
+<section id="choose">
+    <div class="container">
+        <h1 class="page-title">Why Should You Choose <strong>Company Name</strong></h1>
+        <div class="inner-section">
+            <div class="col-md-6 col-sm-12 col-xs-12">
+                <img src="assets/images/inner.png" class="img-responsive" alt="" />
+            </div>
+
+         
+            <!-- features -->
+            <div class="col-md-5 col-sm-12 col-xs-12 feature">
+                <div class="row">
+                    <div class="col-md-2">
+                        <img src="assets/images/a.png" alt="" class="img-responsive icon-feature" />
+                    </div>
+                    <div class="col-md-10 row">
+                        <h4>Multi Platform Communication</h4>
+                        <p class="desc">Engage users across mobile web and desktop. Compatible with all major browsers.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">
+                        <img src="assets/images/b.png" alt="" class="img-responsive icon-feature" />
+                    </div>
+                    <div class="col-md-10 row">
+                        <h4>In-Depth Analysis</h4>
+                        <p class="desc">Understand your users better by tracking events at user level. Track user response, subscription and campaign attribution.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">
+                        <img src="assets/images/alarm.png" alt="" class="img-responsive icon-feature" />
+                    </div>
+                    <div class="col-md-10 row">
+                        <h4>Personalized Pushes</h4>
+                        <p class="desc">Send personalised notifications as per usage behaviour, activity and demography.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">
+                        <img src="assets/images/inetegration.png" alt="" class="img-responsive icon-feature" />
+                    </div>
+                    <div class="col-md-10 row">
+                        <h4>Easy Integration</h4>
+                        <p class="desc">Setup up in minutes with our iTags. Use one tag and start building your subscriber base.</p>
+                    </div>
+                </div>
+
+            </div>
+            <!-- feature end -->
+            <div class="button-div col-md-12 col-sm-12 col-xs-12">
+                <a href="#" class="orange-btn">Try Online Demo</a>
+                <a href="#" class="green-btn">Get Started</a>
+            </div>
+        </>
+    </>
+</section>
+<!-- choose end -->
+<!-- support -->
+
+<section id="support">
+    <div class="container">
+        <h1 class="page-title">Push Notification <strong>Delivery and Analytics</strong> For Websites</h1>
+        <div class="col-md-1 col-sm-1 col-xs-2 text-center support-icons">
+            <img src="assets/images/safari.png" class="img-responsive" alt="" />
+            <p>Safari</p>
+        </div>
+        <div class="col-md-1 col-sm-1 col-xs-2 text-center support-icons">
+            <img src="assets/images/chrome.png" class="img-responsive" alt="" />
+            <p>Google Chrome</p>
+        </div>
+        <div class="col-md-1 col-sm-1 col-xs-2 text-center support-icons">
+            <img src="assets/images/firefox.png" class="img-responsive" alt="" />
+            <p>Mozilla Firefox</p>
+        </div>
+        <div class="col-md-1 col-sm-1 col-xs-2 text-center support-icons">
+            <img src="assets/images/android.png" class="img-responsive" alt="" />
+            <p>Android</p>
+        </div>
+        <div class="col-md-1 col-sm-1 col-xs-2 text-center support-icons">
+
+            <img src="assets/images/windows.png" class="img-responsive" alt="" />
+            <p>Windows</p>
+        </div>
+        <div class="col-md-1 col-sm-1 col-xs-2 text-center support-icons">
+            <img src="assets/images/apple.png" class="img-responsive" alt="" />
+            <p>IOS</p>
+        </div>
+
+    </div>
+</section>
+<!-- support-->
+<!-- register form -->
+<section id="register">
+    <div class="container">
+        <h1 class="page-title">High Volume, Cross Platform <strong>Push Notification Delivery</strong></h1>
+        <h4 class="text-center">Boost your engagement and send smarter notifications</h4>
+        <div class="col-md-8 form-register col-md-offset-2">
+           <!-- <form method="post" class="col-md-9" id="quick-register"> -->
+              
+@using (Html.BeginForm("Index", "Home", FormMethod.Post, new { @class = "col-md-9", role = "form",id="quick-register" }))
+{
+                @Html.AntiForgeryToken()
+       @Html.ValidationSummary("", new { @class = "text-danger" })
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="FirstName" placeholder="First name" required />
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="LastName" placeholder="Last name" required />
+                    </div>
+                </div>
+                <div class="col-md-12  col-sm-12 col-xs-12">
+                    <div class="form-group">
+                        <input type="url" class="form-control" name="Website" placeholder="Website URL(http://www.example.com)" required />
+                    </div>
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="form-group">
+                        <input type="email" class="form-control" name="Email" placeholder="Enter your email" required />
+                    </div>
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="form-group col-md-9 col-sm-9 row">
+                        <input type="text" class="form-control" name="Subdomain" placeholder="Subdomain Name" required />
+                    </div>
+                    <div class="form-group col-md-4 col-sm-4 row sub-domain">
+                        <label>.pushcrew.com</label>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <input type="password" class="form-control" name="Password" placeholder="Enter your password" required />
+                    </div>
+                </div>
+                  <span style="color:red;">   @ViewBag.Message</span>
+<br />
+                <span>By signing up, you agree to our terms of service, privacy policy.</span>
+                <button type="submit" class="orange-btn">Create Account</button>
+                }
+           <!--</form>-->
+        </div>
+    </div>
+
+</section>
+<!-- register end -->
+<!-- stats -->
+<div id="stats">
+    <div class="container">
+        <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="col-md-4">
+                <img src="assets/images/user.png" class="img-responsive" alt="" />
+            </div>
+            <div class="row col-md-9">
+                <h4 class="count">15,000 +</h4>
+                <h4 class="stat-title">Active Users</h4>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="col-md-4">
+                <img src="assets/images/mail.png" class="img-responsive" alt="" />
+            </div>
+            <div class="row col-md-9">
+                <h4 class="count">10,000 +</h4>
+                <h4 class="stat-title">New Subscribers</h4>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="col-md-4">
+                <img src="assets/images/heart.png" class="img-responsive" alt="" />
+            </div>
+            <div class="row col-md-9">
+                <h4 class="count">1,00,000 +</h4>
+                <h4 class="stat-title">Users Touched</h4>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="col-md-4">
+                <img src="assets/images/notification.png" class="img-responsive" alt="" />
+            </div>
+            <div class="row col-md-9">
+                <h4 class="count">50,000 +</h4>
+                <h4 class="stat-title">Push Notifications</h4>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- stats end -->

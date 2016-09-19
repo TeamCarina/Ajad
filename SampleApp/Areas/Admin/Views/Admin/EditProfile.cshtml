@@ -1,0 +1,98 @@
+﻿@model SampleApp.Models.ProfileViewModel
+@{
+    ViewBag.Title = "Edit Profile";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="page-title">
+    <div class="title_left">
+        <h3>Edit Profile</h3>
+    </div>
+    <h5 class="sub-title">Manage Your Profile</h5>
+</div>
+<div class="content">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="row">
+            <div class="x_panel">
+                <div class="row">
+                    <div class="col-md-12 col-xs-12">
+                        <div class="x_panel">
+                            <div class="x_content">
+
+                                <br />
+                                <div class="section-title">
+                                    <h4>Profile Details</h4>
+                                </div>
+                                <div class="bg-whte">
+                                    @* <form class="form-horizontal form-label-left input_mask" id="input-design">*@
+                                    @using (Html.BeginForm("EditProfile", "Admin", FormMethod.Post, new { @class = "form-horizontal form-label-left input_mask", id = "input-design" }))
+                                    {
+                                        @Html.AntiForgeryToken()
+
+                                        <div class="col-md-6">
+                                            <h4>Change Details</h4>
+                                            <hr class="col-md-10">
+                                            <div class="col-md-6 row">
+                                                <div class="input-group input-group-icon">
+                                                    <div class="input-icon"><i class="fa fa-pencil" aria-hidden="true"></i>First Name</div>
+                                                    @Html.TextBoxFor(m => m.FirstName)
+                                                    @Html.ValidationMessageFor(m => m.FirstName, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 row">
+                                                <div class="input-group input-group-icon">
+                                                    <div class="input-icon"><i class="fa fa-pencil" aria-hidden="true"></i>Last Name</div>
+
+                                                    @Html.TextBoxFor(m => m.LastName)
+                                                    @Html.ValidationMessageFor(m => m.LastName, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                            <div class="input-group input-group-icon col-md-10">
+                                                <div class="input-icon"><i class="fa fa-envelope-o" aria-hidden="true"></i>Email</div>
+                                                @Html.TextBoxFor(m => m.Email)
+                                                @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                                            </div>
+                                            <br>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <h4>Change Password</h4>
+                                            <hr class="col-md-10">
+                                            <div class="input-group input-group-icon  col-md-10">
+                                                <div class="input-icon"><i class="fa fa-lock" aria-hidden="true"></i>New Password</div>
+                                                @Html.PasswordFor(m => m.Password)
+                                                @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                                                <input type="hidden" name="OldPassword" value="@Model.Password" />
+                                            </div>
+                                            <div class="input-group input-group-icon  col-md-10">
+                                                <div class="input-icon"><i class="fa fa-lock" aria-hidden="true"></i>Confirm Password</div>
+                                                @Html.PasswordFor(m => m.ConfirmPassword)
+                                                @Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "text-danger" })
+                                            </div>
+
+                                            <br>
+                                            <span style="color: red;">@TempData["msg"]</span>
+                                            <div class="button-div col-md-10 col-sm-12 col-xs-12">
+                                                <div class="row">
+                                                    <!-- Button trigger modal -->
+                                                    <button type="submit" class="btn-darkblue btn-send-dash">Save Details</button>
+                                                </div>
+                                            </div>
+                                        </div>@*
+                          
+                      </form>*@
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <br />
+    <br />
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

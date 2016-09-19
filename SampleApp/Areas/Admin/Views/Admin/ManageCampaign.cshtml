@@ -1,0 +1,172 @@
+﻿@model List<SampleApp.Model.Models.Campaign>
+@{
+    ViewBag.Title = "Manage Campaigns";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+    <div class="page-title">
+              <div class="title_left">
+                <h3>Campaign's</h3>
+              </div>
+              <h5 class="sub-title">View All Campaigns</h5>
+            </div>
+<div class="content">
+ <div class="col-md-12 col-sm-12 col-xs-12">
+     <div class="row">
+          <div class="x_panel">
+            
+            <div class="x_content">
+            <div class="section-title">
+                  	<h4>Campaign's List</h4>
+                  </div>
+            <div class="bg-whte">
+            <div id="accordion">
+              @{
+               int counter = 1;
+                  foreach(var item in Model)
+                  {
+
+                   
+                      
+  <h3>Campaign @counter</h3>
+  <div>
+  <div class="section-title">
+                  	<h4>Campaign Detail</h4>
+                  </div>
+                  <br>
+
+  <table id="example" class="table table-striped responsive-utilities jambo_table">
+                <thead>
+                  <tr class="headings">
+                    <th>#</th>
+                    <th>Campaign Title</th>
+                    <th>Campaign URL</th>
+                    <th>Date</th>
+                    <th class=" no-link last">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                
+                  <tr class="even pointer">
+                    <td class=" "> 7 </td>
+                    <td class=" ">
+                        @item.Title
+
+                    </td>
+                    <td class=" ">
+                        @item.URL
+
+                    </td>
+                    <td class=" ">
+                        @item.CreateDate
+
+                    </td>
+                    <td><a href="#" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
+                         <a href="/Admin/Admin/DeleteCampaign?AppId=@item.AppId" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
+                         <a href="/Admin/Admin/GetCode?AppId=@item.AppId" class="btn btn-success btn-xs"><i class="fa fa-link"></i> Get Code </a></td>
+                  </tr>
+                </tbody>
+              </table>
+              <br>
+
+    <div class="section-title">
+                  	<h4>Notification's List</h4>
+                  </div>   
+                  <br>
+       
+  @*<table id="example1" class="table table-striped responsive-utilities jambo_table">
+                <thead>
+                  <tr class="headings">
+                    <th>#</th>
+                    <th>Notification Title</th>
+                    <th>Description</th>
+                    <th>URL</th>
+                    <th class=" no-link last">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="even pointer">
+                    <td class=" "> 1 </td>
+                    <td class=" ">Carina</td>
+                    <td class=" ">Notification Body</td>
+                    <td class=" ">https://carinait.net</td>
+                    <td><a href="#" class="btn btn-info btn-xs"><i class="fa fa-eye"></i> stats </a> <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a> <a href="#" class="btn btn-success btn-xs"><i class="fa fa-paper-plane"></i> Resend </a></td>
+                  </tr>
+                  <tr class="even pointer">
+                    <td class=" "> 2 </td>
+                    <td class=" ">Carina</td>
+                    <td class=" ">Notification Body</td>
+                    <td class=" ">https://carinait.net</td>
+                    <td><a href="#" class="btn btn-info btn-xs"><i class="fa fa-eye"></i> stats </a> <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a> <a href="#" class="btn btn-success btn-xs"><i class="fa fa-paper-plane"></i> Resend </a></td>
+                  </tr>
+                  <tr class="even pointer">
+                    <td class=" "> 3 </td>
+                    <td class=" ">Carina</td>
+                    <td class=" ">Notification Body</td>
+                    <td class=" ">https://carinait.net</td>
+                    <td><a href="#" class="btn btn-info btn-xs"><i class="fa fa-eye"></i> stats </a> <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a> <a href="#" class="btn btn-success btn-xs"><i class="fa fa-paper-plane"></i> Resend </a></td>
+                  </tr>
+                  <tr class="even pointer">
+                    <td class=" "> 4 </td>
+                    <td class=" ">Carina</td>
+                    <td class=" ">Notification Body</td>
+                    <td class=" ">https://carinait.net</td>
+                    <td><a href="#" class="btn btn-info btn-xs"><i class="fa fa-eye"></i> stats </a> <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a> <a href="#" class="btn btn-success btn-xs"><i class="fa fa-paper-plane"></i> Resend </a></td>
+                  </tr>
+                  <tr class="even pointer">
+                    <td class=" "> 5 </td>
+                    <td class=" ">Carina</td>
+                    <td class=" ">Notification Body</td>
+                    <td class=" ">https://carinait.net</td>
+                    <td><a href="#" class="btn btn-info btn-xs"><i class="fa fa-eye"></i> stats </a> <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a> <a href="#" class="btn btn-success btn-xs"><i class="fa fa-paper-plane"></i> Resend </a></td>
+                  </tr>
+                  <tr class="even pointer">
+                    <td class=" "> 6 </td>
+                    <td class=" ">Carina</td>
+                    <td class=" ">Notification Body</td>
+                    <td class=" ">https://carinait.net</td>
+                    <td><a href="#" class="btn btn-info btn-xs"><i class="fa fa-eye"></i> stats </a> <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a> <a href="#" class="btn btn-success btn-xs"><i class="fa fa-paper-plane"></i> Resend </a></td>
+                  </tr>
+                  <tr class="even pointer">
+                    <td class=" "> 7 </td>
+                    <td class=" ">Carina</td>
+                    <td class=" ">Notification Body</td>
+                    <td class=" ">https://carinait.net</td>
+                    <td><a href="#" class="btn btn-info btn-xs"><i class="fa fa-eye"></i> stats </a> <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a> <a href="#" class="btn btn-success btn-xs"><i class="fa fa-paper-plane"></i> Resend </a></td>
+                  </tr>
+                </tbody>
+              </table>*@
+  </div>
+                      counter++;
+                  }
+               
+                   }
+
+
+
+
+</div>
+              
+            </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      <br />
+      <br />
+      <br />
+    </div>
+<script src="~/Areas/Admin/assets/js/jquery-ui/jquery-ui.min.js" type="text/javascript"></script> 
+<script>
+    var jq = $.noConflict();
+
+    jq(document).ready(function () {
+        jq("#accordion").accordion({
+            collapsible: true,
+            heightStyle: "content"
+        });
+    });
+  </script>
+
+

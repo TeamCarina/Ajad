@@ -1,0 +1,60 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+
+   <script type="text/javascript">
+       // <![CDATA[
+       $(document).ready(function () {
+
+
+
+
+           $.ajax({
+               url: "/Home/GetAllApps",
+               type: "GET",
+               dataType: "json",
+
+               success: function (data) {
+                  var data1=data.replace('/', '');
+                  
+                 // console.log(data1);
+
+
+                  $.each(JSON.parse(data1), function (idx, obj) {
+                     // alert(obj.name);
+                      var opt = new Option(obj.name, obj.id);
+
+
+                      $('#Apps').append(opt);
+                  });
+
+                
+                 
+               },
+               error: function (xhr) {
+                   $("#msg").text("Error occured.");
+               }
+
+           });
+       });
+</script>
+</head>
+<body>
+    <div>
+      <div class="form-group">
+					<label>Select Apps :</label>
+                    <select class="form-control"  name="Apps" id="Apps">
+                          <option>Select a apps</option>
+                    </select>
+					</div>
+    </div>
+</body>
+</html>

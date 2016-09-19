@@ -1,0 +1,30 @@
+Email:ctsazaad@gmail.com
+Password:teamcarina2014
+Your App ID: 30fc11e1-4ed5-41e3-8ce6-282ac00ee454
+Rest API Keys:
+
+N2NjN2JlNjgtNWMyMC00YTZiLTgxYWUtYTQ0ODkxMWExZTVk
+
+User Auth Key(basic_auth_key):
+
+YWIwMzQyOGYtZDU0NC00YWUzLTg3NzItNmFiMzc3ZmMxMGY2
+
+
+Website:http://somee.com/
+
+username:Ajad12345#
+User:Ajad12345
+
+
+<script type="text/javascript" src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async='async'></script>
+  <script type="text/javascript">
+      var OneSignal = OneSignal || [];
+      OneSignal.push(["init", {
+          appId: "66bf856f-f9c3-41cf-ae2a-8515555f1990",
+          autoRegister: false, /* Set to true to automatically prompt visitors */
+          subdomainName: 'logicdoor',
+          notifyButton: {
+              enable: true /* Set to false to hide */
+          }
+      }]);
+  </script>

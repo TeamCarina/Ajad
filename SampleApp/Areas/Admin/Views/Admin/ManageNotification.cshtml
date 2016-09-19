@@ -1,0 +1,54 @@
+﻿@{
+    ViewBag.Title = "Manage Notifications";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+    <div class="page-title">
+              <div class="title_left">
+                <h3>Push Notification's</h3>
+              </div>
+              <h5 class="sub-title">View All Notification</h5>
+            </div>
+<div class="content">
+ <div class="col-md-12 col-sm-12 col-xs-12">
+     <div class="row">
+          <div class="x_panel">
+            
+            <div class="x_content">
+            
+            <div class="section-title">
+                  	<h4>Notification's List</h4>
+                  </div>
+            <div class="bg-whte">
+              <table id="example" class="table table-striped responsive-utilities jambo_table notifications">
+                <thead>
+                  <tr class="headings">
+                    <th>Notification</th>
+                    <th>Delivered</th>
+                    <th>Clicks</th>
+                    <th>Click Rate</th>
+                    <th>Created On</th>
+                    <th class=" no-link last">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="even pointer">
+                    <td class="notification-details"> <span class="col-md-3"><img src="assets/images/chrome.png" alt="" class="img-responsive smal-image" /></span><div class="col-md-9"><h3 class="preview-tile">Notification Title</h3> <p>Notification Body</p><p><a href="">xyzabc.pushnotification.com</a></p><p><a href="https://pushcrew.com/admin/send-notification.php">https://pushcrew.com/admin/send-notification.php</a></p> </div> </td>
+                    <td class=" ">1</td>
+                    <td class=" ">0</td>
+                    <td class=" ">0%</td>
+                    <td class=" ">August 1st 2016, 6:47</td>
+                    <td><a href="#" class="btn btn-success btn-xs"><i class="fa fa-paper-plane"></i> Resend </a> <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a></td>
+                  </tr>
+                  
+                </tbody>
+              </table>
+            </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      <br />
+      <br />
+      <br />
+    </div>

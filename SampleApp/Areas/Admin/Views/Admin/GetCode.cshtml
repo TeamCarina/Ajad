@@ -1,0 +1,91 @@
+﻿@model SampleApp.Models.RegisterViewModel
+@{
+    ViewBag.Title = "GetCode";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="page-title">
+    <div class="title_left">
+        <h3>Get Code</h3>
+    </div>
+    <h5 class="sub-title">Copy and Paste this code before
+       @* <pre>*@
+         <textarea class="form-control custom-control" rows="5" style="resize:none">
+             <script type="text/javascript" src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async='async'></script>
+  <script type="text/javascript">
+      var OneSignal = OneSignal || [];
+      OneSignal.push(["init", {
+          appId: "@Model.APPId",
+          autoRegister: false, /* Set to true to automatically prompt visitors */
+          subdomainName: '@Model.Subdomain',
+          notifyButton: {
+              enable: true /* Set to false to hide */
+          }
+      }]);
+  </script>
+             </textarea>
+      @*  </pre>*@
+        tag on your website page(s).</h5>
+</div>
+<div class="content">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="row">
+            <div class="x_panel">
+
+                <div class="x_content">
+
+                    <a href="#" class="btn btn-campaign pull-right"><i class="fa fa-arrow-right" aria-hidden="true"></i>Go to Dashboard</a>
+
+                    <div class="bg-whte">
+                        <div class="col-md-5">
+                           @* <form name="developer-code">*@
+                            
+                                @using (Html.BeginForm("GetCode", "Admin", FormMethod.Post, new { }))
+{
+                                <textarea readonly id="txtcopycode" name="txtcopycode" class="form-control" rows="5" placeholder="code will be here.">
+
+                                     <script type="text/javascript" src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async='async'></script>
+  <script type="text/javascript">
+      var OneSignal = OneSignal || [];
+      OneSignal.push(["init", {
+          appId: "@Model.APPId",
+          autoRegister: false, /* Set to true to automatically prompt visitors */
+          subdomainName: '@Model.Subdomain',
+          notifyButton: {
+              enable: true /* Set to false to hide */
+          }
+      }]);
+  </script>
+             </textarea>
+
+                                
+                                <br>
+
+                                <div class="input-group input-group-icon col-md-10">
+                                    <div class="input-icon">Send code to developer(s)</div>
+                                    <input type="text" placeholder="john@domain.com, dan@domain.com" name="sendcode" class="col-md-8" required>
+                                    <button type="submit" class="btn btn-light-blue pull-left col-md-4 no-radius padding-input">Send <i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+                                </div>
+                                }@*
+                            </form>*@
+                        </div>
+
+                   
+
+                        <div class="col-md-7 instruction">
+                            <h5 class="head"><strong>What does the code do?</strong></h5>
+                            <br>
+
+                            <p>The code enables websites to ask visitors for permission to send push notifications. You can choose to add code only on the page(s) on which you want permission box for notifications to appear.</p>
+
+                            <p><i class="fa  fa-exclamation-triangle"></i>The permission box to ask for permission will not appear unless you add this code on your website page(s)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <br />
+    <br />
+</div>

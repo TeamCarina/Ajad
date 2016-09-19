@@ -1,0 +1,24 @@
+﻿@using Microsoft.AspNet.Identity
+@if (Request.IsAuthenticated)
+{
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+        @Html.AntiForgeryToken()
+ 
+        @*<ul class="nav navbar-nav navbar-right">
+            <li>
+                @Html.ActionLink("Hello " + User.Identity.Name + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+            </li>
+            <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+        </ul>*@
+   
+     <button class="dropdown-toggle btn-profile pull-right" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">  @User.Identity.Name    <span class="caret"></span> </button>
+        <ul class="dropdown-menu profile-option" aria-labelledby="dropdownMenu1">
+            <li><a href="/Admin/Admin/EditProfile"><i class="fa fa-user" aria-hidden="true"></i> Edit Profile</a></li>
+            <li><a href="payment-plan.html"><i class="fa fa-money" aria-hidden="true"></i> Upgrade Plan</a></li>
+            <li><a href="#"><i class="fa fa-life-ring" aria-hidden="true"></i> Technical Support</a></li>
+            <li><a href="javascript:document.getElementById('logoutForm').submit()"><i class="fa fa-power-off" aria-hidden="true"></i> Logout</a></li>
+        </ul>
+       
+    }
+}

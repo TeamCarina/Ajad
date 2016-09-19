@@ -1,0 +1,119 @@
+﻿@using SampleApp.Models
+@{
+    ViewBag.Title = "Log in";
+}
+
+
+<div class="welcome-user">
+<div class="container">
+	<!-- login section-->
+       <div class="col-md-5">
+   <h1>Login</h1>
+     <div class="line">
+                <hr>
+	                <div class="divider"></div>
+                </div>
+   @*     <form method="post" class="login">*@
+                       @using (Html.BeginForm("UserLogin", "Home", FormMethod.Post, new {  @class = "login" }))
+ {
+   	
+                    	
+                        <div class="col-md-12">
+                        <div class="row">
+                        <div class="form-group">
+                			<input type="email" name="Email" class="form-control" placeholder="Email" required />
+		              	</div>
+                        </div>
+                        </div>
+                        <div class="col-md-12">
+                        <div class="row">
+                        <div class="form-group">
+                			<input type="password" name="Password" class="form-control" placeholder="Password" required />
+		              	</div>
+                        </div>
+                        </div>
+                	<button type="submit" class="orange-btn">Login</button>
+                    <br>
+                           <span style="color:red;"> @ViewBag.msg</span>
+                    <div class="options">
+                    <div class="remember pull-left">
+                    	<input type="checkbox" class="checkbox-inline" /> Remember me
+                    </div>
+                    <a href="#" class="pull-right">Forgot password?</a>
+                    </div>
+					<div class="social-login">
+                    <button type="submit" class="fb-btn"> <i class="fa fa-facebook" aria-hidden="true"></i> using Facebook</button>
+                    <button type="submit" class="google-btn pull-right"> <i class="fa fa-google-plus" aria-hidden="true"></i> using Google</button>
+					</div>@*
+                </form>*@
+                       }
+        	
+   </div>
+    <!-- login end -->
+    <div class="col-md-5 pull-right">
+         <h1>Register</h1>
+     <div class="line">
+                <hr>
+	                <div class="divider"></div>
+                </div>
+   @* <form method="post" class="register">    *@          
+                	   @using (Html.BeginForm("userRegistration", "Home", FormMethod.Post, new { @class = "register" }))
+ {
+
+                    	<div class="col-md-6">
+                        <div class="row">
+                        <div class="form-group">
+                			<input type="text" class="form-control" name="FirstName" placeholder="First Name" required />
+		              	</div>
+                        </div>
+                        </div>
+                        <div class="col-md-6">
+                        <div class="row">
+                        <div class="form-group">
+                			<input type="text" class="form-control" name="LastName" placeholder="Last Name" required />
+		              	</div>
+                        </div>
+                        </div>
+                        <div class="col-md-12">
+                        <div class="row">
+                        <div class="form-group">
+                			<input type="url" class="form-control" name="Website" placeholder="Website URL(http://www.example.com)" required />
+		              	</div>
+                        </div>
+                        </div>
+                        <div class="col-md-12">
+                        <div class="row">
+                        <div class="form-group">
+                			<input type="email" class="form-control" name="Email" placeholder="Enter Your Email" required />
+		              	</div>
+                        </div>
+                        </div>
+                        <div class="col-md-12">
+                        <div class="row">
+                        <div class="form-group col-md-9 row">
+                			<input type="text" class="form-control" name="Subdomain" placeholder="Subdomain Name" required />
+		              	</div>
+                        <div class="form-group col-md-4 row sub-domain">
+                			<label>.pushcrew.com</label>
+		              	</div>
+                        </div>
+                        </div>
+                        <div class="col-md-12">
+                        <div class="row">
+                        <div class="form-group">
+                			<input type="password" class="form-control"  name="Password" placeholder="Enter Your Password" required />
+		              	</div>
+                        </div>
+                        </div>
+                        <span>By signing up, you agree to our <a href="#">terms of service</a>, <a href="#">privacy policy</a>.</span>
+                        <span style="color:red;">@ViewBag.Message</span>
+                	<button type="submit" class="orange-btn">Create Account</button>@*
+                </form>*@
+                    }
+                </div>
+ </div>
+</div>
+
+
+
+  

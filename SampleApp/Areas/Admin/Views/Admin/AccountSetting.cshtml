@@ -1,0 +1,44 @@
+﻿@model SampleApp.Models.AccountSettingViewModel
+@{
+    ViewBag.Title = "Account Setting";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+<div class="section-title">
+    <h4>Account Settings</h4>
+</div>
+<div class="bg-whte">
+    @* <form class="form-horizontal form-label-left input_mask" id="input-design">*@
+    @using (Html.BeginForm("AccountSetting", "Admin", FormMethod.Post, new { @class = "form-horizontal form-label-left input_mask", id = "input-design" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <span class="col-md-12 col-xs-12 col-sm-12">Your Account ID: <strong>@Model.AppId</strong> </span>
+        @Html.HiddenFor(m => m.AppId)
+        <span class="divider"></span>
+
+        <div class="col-md-6">
+            <div class="input-group input-group-icon col-md-10">
+                <div class="input-icon">Company Name</div>
+                @Html.TextBoxFor(m => m.CompanyName)
+                @Html.ValidationMessageFor(m => m.CompanyName, "", new { @class = "text-danger" })
+                <br />
+
+                <span class="divider">
+                    <span style="color: red;">@TempData["msg"]</span>
+                </span>
+                <button type="submit" class="btn btn-light-blue">Edit</button>&nbsp;
+                              <button type="submit" class="btn btn-light-blue">Save</button>
+            </div>
+            <p>
+                <input type="checkbox" class="checkbox-inline" />
+                Add a one-click unsubscribe link for your subscribers</p>
+            <p>The link will appear once people land on the webpage after they click on a notification</p>
+            <button type="submit" class="btn btn-light-blue pull-left col-md-4 no-radius padding-input" data-toggle="modal" data-target="#myModal">Show Preview  </button>
+        </div>@*
+                      </form>*@
+    }
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
